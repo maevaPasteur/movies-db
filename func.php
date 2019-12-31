@@ -112,7 +112,7 @@ function template_table($title, $items, $table, $param1Title, $param1Content, $p
                 $html.= "
                 </tbody>
             </table>
-            <a href='create.php' class='link-1 new-client'>Nouveau</a>
+            <a href=\"create.php?table=$table\" class='link-1 new-client'>Nouveau</a>
         </div>
     ";
     echo $html;
