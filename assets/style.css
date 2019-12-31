@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    background: #FAFBFF;
+}
+a, body {
+    color: #666;
+}
+a {
+    text-decoration: none;
+}
+header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box-1 {
+    background-color: #fff;
+    box-shadow: 0 4px 15px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    border-radius: 4px;
+}
+.p-20 {
+    padding: 20px;
+}
+hr {
+    width: 100%;
+    display: block;
+    height: 1px;
+    background-color: #ddd;
+    border: none;
+}
+.link-1 {
+    background-color: #EE5B6E;
+    height: 40px;
+    padding: 0 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    letter-spacing: .6px;
+    border-radius: 4px;
+    transition: background-color ease .3s;
+    cursor: pointer;
+}
+.link-1[type="submit"] {
+    border: 0;
+    margin-top: 20px;
+}
+.link-1:hover,
+.link-3:hover {
+    background-color: #ff7a8b;
+}
+header a:before {
+    margin-right: 10px;
+}
+header a:hover {
+    border-color: #bbb;
+}
+h1 {
+    font-size: 20px;
+    font-weight: 100;
+}
+h2 {
+    font-size: 18px;
+    color: #333;
+}
+.icon-home:before {
+   content:'';
+    width: 15px;
+    height: 15px;
+    background-image: url("images/home.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+}
+main {
+    width: calc(100% - 60px);
+    max-width: 1000px;
+    background: #fff;
+    box-shadow: 0 7px 5px -3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 7px 5px -3px rgba(0,0,0,0.1);
+    display: block;
+    margin: 40px auto 0;
+}
+table {
+    width: 100%;
+}
+th {
+   font-weight: 700;
+    color: #333;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+td {
+    padding: 5px 0;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.new-client {
+    margin: 20px 20px 0;
+    width: fit-content;
+}
+.new-client:before {
+    content:'';
+    width: 15px;
+    height: 15px;
+    background-image: url("images/add-user.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    margin-right: 10px;
+}
+.icon {
+    width: 15px;
+    height: auto;
+    opacity: .8;
+    transition: opacity ease .3s;
+}
+.icon:hover {
+    opacity: .4;
+}
+.link-2, .link-3 {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.link-3 {
+    background-color: #EE5B6E;
+    color: #fff;
+    transition: background-color ease .3s;
+}
+.link-2 {
+    border: solid 2px #EE5B6E;
+    color: #EE5B6E;
+    height: 38px;
+    line-height: 38px;
+    transition: color ease .3s;
+}
+.link-2:hover {
+    border: solid 2px #ff7a8b;
+}
+.msg {
+    color: #EE5B6E;
+    padding: 20px;
+}
+form > div {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+input {
+    width: 100%;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: solid 1px #ddd;
+}
