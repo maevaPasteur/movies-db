@@ -3,18 +3,22 @@ include 'func.php';
 $pdo = connection();
 $success = false;
 
-if (isset($_GET['id'])) {
+$id = $_GET['id'];
+$table = $_GET['table'];
+$idName = $table.'ID';
 
-    $stmt = $pdo->prepare('SELECT * FROM clients WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
-    $client = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (!$client) {
-        die ('Aucun client ne correspond à cet iD.');
+if (isset($id) && isset($table)) {
+
+    $item = getItem($pdo, $table);
+    $cols = getColumns($pdo, $table);
+
+    if (!$item) {
+        die ('Rien ne correspond à cet iD.');
     }
 
     if (isset($_GET['confirm'])) {
         if ($_GET['confirm'] == 'yes') {
-            $stmt = $pdo->prepare('DELETE FROM clients WHERE id = ?');
+            $stmt = $pdo->prepare("DELETE FROM $table WHERE $idName = ?");
             $stmt->execute([$_GET['id']]);
             $success = true;
         } else {
@@ -30,14 +34,30 @@ if (isset($_GET['id'])) {
 <?=template_header('Delete')?>
 
     <main class="box-1 p-20">
-        <h2>Supprimer le client #<?=$client['id']?></h2>
+        <h2>Supprimer <?= '#'.$id ?> de la table <?= $table ?></h2>
+        <table class="p-20">
+            <thead>
+            <tr>
+                <?php foreach ($cols as $col): ?>
+                    <th><?= $col ?></th>
+                <?php endforeach; ?>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <?php foreach ($cols as $col): ?>
+                    <td><?= $item[$col] ?></td>
+                <?php endforeach; ?>
+            </tr>
+            </tbody>
+        </table>
         <?php if ($success): ?>
-            <p class="msg">Le client a bien été supprimé</p>
+            <p class="msg">Suppression réussie !</p>
         <?php else: ?>
-            <p>Êtes vous certain de vouloir supprimer <?= $client['prenom'].' '.$client['nom']?> de vos clients ?</p>
+            <p>Êtes vous certain de vouloir le supprimer ?<br>Cette action est définitive.</p>
             <div>
-                <a class="link-2" href="delete.php?id=<?=$client['id']?>&confirm=yes">Yes</a>
-                <a class="link-3" href="delete.php?id=<?=$client['id']?>&confirm=no">No</a>
+                <a class="link-2" href="delete.php?id=<?= $id.'&table='.$table ?>&confirm=yes">Yes</a>
+                <a class="link-3" href="delete.php?id=<?= $id.'&table='.$table ?>&confirm=no">No</a>
             </div>
         <?php endif; ?>
     </main>

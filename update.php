@@ -44,26 +44,6 @@ if (isset($id) && isset($table)) {
     die ('Un ID est nécéssaire.');
 }
 
-function getColumns($pdo, $table) {
-    $sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = :table";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':table', $table, PDO::PARAM_STR);
-    $stmt->execute();
-    $output = array();
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $output[] = $row['COLUMN_NAME'];
-    }
-    return $output;
-}
-
-function getItem($pdo, $table) {
-    $idName = $table.'ID';
-    $stmt = $pdo->prepare("SELECT * FROM $table WHERE $idName = ?");
-    $stmt->execute([$_GET['id']]);
-    $item = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $item;
-}
-
 ?>
 
 <?= template_header('Read') ?>

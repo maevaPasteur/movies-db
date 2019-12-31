@@ -17,6 +17,28 @@ function connection() {
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 }
+
+function getItem($pdo, $table) {
+    $idName = $table.'ID';
+    $stmt = $pdo->prepare("SELECT * FROM $table WHERE $idName = ?");
+    $stmt->execute([$_GET['id']]);
+    $item = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $item;
+}
+
+function getColumns($pdo, $table) {
+    $sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = :table";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':table', $table, PDO::PARAM_STR);
+    $stmt->execute();
+    $output = array();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $output[] = $row['COLUMN_NAME'];
+    }
+    return $output;
+}
+
+
 function template_header($title) {
     echo <<<EOT
 <!DOCTYPE html>
@@ -82,7 +104,7 @@ function template_table($title, $items, $table, $param1Title, $param1Content, $p
                     $html.= "
                             <td>
                                 <a href=\"update.php?id=$item[$id]&table=$table\"><img class='icon' src='assets/images/edit.svg' alt='edit'></a>
-                                <a href=\"delete.php?id=$item[$id]\"><img class='icon' src='assets/images/delete.svg' alt='delete'></a>
+                                <a href=\"delete.php?id=$item[$id]&table=$table\"><img class='icon' src='assets/images/delete.svg' alt='delete'></a>
                             </td>
                         </tr>
                     ";
