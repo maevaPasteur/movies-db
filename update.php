@@ -4,66 +4,83 @@ include 'func.php';
 $pdo = connection();
 $success = false;
 
-if (isset($_GET['id'])) {
+$id = $_GET['id'];
+$table = $_GET['table'];
+
+if (isset($id) && isset($table)) {
+
+    $item = getItem($pdo, $table);
+    $cols = getColumns($pdo, $table);
+    $inputs = array();
+
     if (!empty($_POST)) {
-
-        $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
-        $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
-        $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
-        $date = isset($_POST['date']) ? $_POST['date'] : '';
-
-        $stmt = $pdo->prepare('UPDATE clients SET id = ?, prenom = ?, nom = ?, email = ?, telephone = ?, horodatage = ? WHERE id = ?');
-        $stmt->execute([$id, $firstname, $lastname, $email, $phone, $date, $_GET['id']]);
+        $sql = "UPDATE $table SET ";
+        $length = count($cols);
+        $i=0;
+        foreach ($cols as $col) {
+            $i++;
+            if($i===1) {
+                $inputs[] = isset($_POST[$col]) && !empty($_POST[$col]) && $_POST[$col] != 'auto' ? $_POST[$col] : NULL;
+            } else {
+                $inputs[] = isset($_POST[$col]) ? $_POST[$col] : '';
+            }
+            $sql.= "$col = ?";
+            if($i !== $length) {
+                $sql.=", ";
+            }
+        }
+        $sql.=" WHERE $cols[0] = ?";
+        $inputs[] = $id;
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($inputs);
         $success = true;
+        $item = getItem($pdo, $table);
     }
 
-    $stmt = $pdo->prepare('SELECT * FROM clients WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
-    $client = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (!$client) {
-        die ('Aucun client ne correspond à cet ID.');
+    if (!$item) {
+        die ('Rien ne correspond à cet ID.');
     }
 } else {
     die ('Un ID est nécéssaire.');
 }
+
+function getColumns($pdo, $table) {
+    $sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = :table";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':table', $table, PDO::PARAM_STR);
+    $stmt->execute();
+    $output = array();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $output[] = $row['COLUMN_NAME'];
+    }
+    return $output;
+}
+
+function getItem($pdo, $table) {
+    $idName = $table.'ID';
+    $stmt = $pdo->prepare("SELECT * FROM $table WHERE $idName = ?");
+    $stmt->execute([$_GET['id']]);
+    $item = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $item;
+}
+
 ?>
 
 <?= template_header('Read') ?>
 
 <main class="box-1">
-    <h2 class="p-20">Informations de <?=$client['prenom'].' '.$client['nom']?></h2>
-    <hr>
-    <form class="p-20" action="update.php?id=<?= $client['id'] ?>" method="post">
-        <div>
-            <label for="id">ID</label>
-            <input type="text" name="id" value="<?= $client['id'] ?>" id="id">
-        </div>
-       <div>
-           <label for="firstname">Prénom</label>
-           <input type="text" name="firstname" value="<?= $client['prenom'] ?>" id="firstname">
-       </div>
-        <div>
-            <label for="lastname">Nom</label>
-            <input type="text" name="lastname" value="<?= $client['nom'] ?>" id="lastname">
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" value="<?= $client['email'] ?>" id="email">
-        </div>
-       <div>
-           <label for="phone">Phone</label>
-           <input type="text" name="phone" value="<?= $client['telephone'] ?>" id="phone">
-       </div>
-       <div>
-           <label for="date">Created</label>
-           <input type="text" name="date" value="<?= $client['horodatage'] ?>" id="date">
-       </div>
-       <button class="link-1" type="submit">Mettre à jour</button>
+    <h2 class="p-20">Table <?= $table ?></h2>
+    <form class="p-20" action="update.php?id=<?= $id ?>&table=<?= $table ?>" method="post">
+        <?php foreach ($cols as $col): ?>
+            <div>
+                <label for="<?= $col ?>"><?= $col ?></label>
+                <input type="text" name="<?= $col ?>" value="<?= $item["$col"] ?>" id="<?= $col ?>">
+            </div>
+        <?php endforeach; ?>
+        <button class="link-1" type="submit">Mettre à jour</button>
     </form>
     <?php if ($success): ?>
-        <p class="msg">Le profil de ce client a bien été mis à jour.</p>
+        <p class="msg">Mise à jour réussie !</p>
     <?php endif; ?>
 </main>
 

@@ -42,9 +42,9 @@ function template_footer() {
 EOT;
 }
 
-function template_table($title, $items, $type, $param1Title, $param1Content, $param2Title, $param2Content) {
+function template_table($title, $items, $table, $param1Title, $param1Content, $param2Title, $param2Content) {
     $html = "
-<div class='box-1 pb-20' id=\"$type\">
+<div class='box-1 pb-20' id=\"$table\">
             <h2 class='p-20'>$title</h2>
             <hr>
             <table class='p-20'>
@@ -62,18 +62,18 @@ function template_table($title, $items, $type, $param1Title, $param1Content, $pa
                 </thead>
                 <tbody>";
                 foreach ($items as $item) {
-                    $id = $type.'ID';
+                    $id = $table.'ID';
                     $html.= "
                         <tr>
                             <td>$item[$id]</td>
                             ";
-                    if($type === 'poster') {
+                    if($table === 'poster') {
                         $html.= "<td><img src=\"$item[$param1Content]\" alt='poster'></td>";
                     } else {
                         $html.= "<td>$item[$param1Content]</td>";
                     }
                     if($param2Content) {
-                        if($type === 'song') {
+                        if($table === 'song') {
                             $html.= "<td><a href=\"$item[$param2Content]\">$item[$param2Content]</a></td>";
                         } else {
                             $html.="<td>$item[$param2Content]</td>";
@@ -81,7 +81,7 @@ function template_table($title, $items, $type, $param1Title, $param1Content, $pa
                     }
                     $html.= "
                             <td>
-                                <a href=\"update.php?id=$item[$id]\"><img class='icon' src='assets/images/edit.svg' alt='edit'></a>
+                                <a href=\"update.php?id=$item[$id]&table=$table\"><img class='icon' src='assets/images/edit.svg' alt='edit'></a>
                                 <a href=\"delete.php?id=$item[$id]\"><img class='icon' src='assets/images/delete.svg' alt='delete'></a>
                             </td>
                         </tr>
