@@ -1,6 +1,6 @@
 <?php
 function connection() {
-    $db = 'crud';
+    $db = 'movie_db';
     $charset = 'utf8mb4';
     $host = "localhost";
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -34,10 +34,50 @@ function template_header($title) {
     </header>
 EOT;
 }
+
 function template_footer() {
     echo <<<EOT
     </body>
 </html>
 EOT;
 }
+
+function template_table($title, $items, $id, $param1Title, $param1Content, $param2Title, $param2Content) {
+    $html = <<<EOT
+<div class="box-1 pb-20">
+            <h2 class="p-20">$title</h2>
+            <hr>
+            <table class="p-20">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>$param1Title</th>
+                    <th>$param2Title</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+EOT;
+    foreach ($items as $item) {
+        $html .= <<<EOT
+        <tr>
+                        <td>$item[$id]</td>
+                        <td>$item[$param1Content]</td>
+                        <td>$item[$param2Content]</td>
+                        <td>
+                            <a href="update.php?id=$item[$id]"><img class="icon" src="assets/images/edit.svg" alt="edit"></a>
+                            <a href="delete.php?id=$item[$id]"><img class="icon" src="assets/images/delete.svg" alt="delete"></a>
+                        </td>
+                    </tr>
+EOT;
+    }
+    $html .= <<<EOT
+                </tbody>
+            </table>
+            <a href="create.php" class="link-1 new-client">Nouveau</a>
+        </div>
+EOT;
+    echo $html;
+}
 ?>
+
