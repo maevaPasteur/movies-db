@@ -10,6 +10,10 @@ $artistes =  $pdo->query('SELECT * FROM artiste')->fetchAll(PDO::FETCH_ASSOC);
 $roles =  $pdo->query('SELECT * FROM role')->fetchAll(PDO::FETCH_ASSOC);
 $posters =  $pdo->query('SELECT * FROM poster')->fetchAll(PDO::FETCH_ASSOC);
 $genres =  $pdo->query('SELECT * FROM genre')->fetchAll(PDO::FETCH_ASSOC);
+$soundtrack =  $pdo->query('SELECT * FROM soundtrack')->fetchAll(PDO::FETCH_ASSOC);
+$trailers =  $pdo->query('SELECT * FROM trailer')->fetchAll(PDO::FETCH_ASSOC);
+$users =  $pdo->query('SELECT * FROM person')->fetchAll(PDO::FETCH_ASSOC);
+$bands =  $pdo->query('SELECT * FROM band')->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -26,6 +30,10 @@ $genres =  $pdo->query('SELECT * FROM genre')->fetchAll(PDO::FETCH_ASSOC);
         <?= template_table('Les rôles', $roles, 'role', 'Titre', 'roleDesc', null, null) ?>
         <?= template_table('Les affiches', $posters, 'poster', 'Image', 'posterLink', null, null) ?>
         <?= template_table('Les genres', $genres, 'genre', 'Titre', 'genreType', 'Description', 'genreDesc') ?>
+        <?= template_table('Les bandes sons', $soundtrack, 'soundtrack', 'Titre', 'soundtrackName', 'Taille', 'soundtrackSize') ?>
+        <?= template_table('Les bandes annonces', $trailers, 'trailer', 'Url', 'trailerURL', null, null) ?>
+        <?= template_table('Les personnes', $users, 'person', 'Prénom', 'personFirstName', 'Nom', 'personLastName') ?>
+        <?= template_table('Les groupes', $bands, 'band', 'Nom', 'bandName', null, null) ?>
 
     </main>
 
