@@ -1,0 +1,370 @@
+[
+{"type":"header","version":"4.8.5","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"movie_db"},
+{"type":"table","name":"artiste","database":"movie_db","data":
+[
+{"artisteID":"1","artisteName":"Thomas Newman","artisteNationality":"American"},
+{"artisteID":"2","artisteName":"Nino Rota","artisteNationality":"Italian"},
+{"artisteID":"3","artisteName":"Joe Bloggs","artisteNationality":"British"},
+{"artisteID":"4","artisteName":"Carmine Coppola","artisteNationality":"Italian"},
+{"artisteID":"5","artisteName":"Hans Zimmer","artisteNationality":"Germamn"},
+{"artisteID":"6","artisteName":"Hughie Lewis","artisteNationality":"American"},
+{"artisteID":"7","artisteName":"Edsel Dope","artisteNationality":"American"},
+{"artisteID":"8","artisteName":"Acey Slade","artisteNationality":"American"},
+{"artisteID":"9","artisteName":"Racci Shay","artisteNationality":"American"},
+{"artisteID":"10","artisteName":"Virus","artisteNationality":"American"},
+{"artisteID":"11","artisteName":"John Hurley","artisteNationality":"American"},
+{"artisteID":"12","artisteName":"Neil Diamond","artisteNationality":"American"},
+{"artisteID":"13","artisteName":"Robert Bell","artisteNationality":"American"},
+{"artisteID":"14","artisteName":"Ronald Bell","artisteNationality":"American"},
+{"artisteID":"15","artisteName":"George Brown","artisteNationality":"American"},
+{"artisteID":"16","artisteName":"Lavell Evans","artisteNationality":"American"},
+{"artisteID":"17","artisteName":"Amir Bayyan","artisteNationality":"American"},
+{"artisteID":"18","artisteName":"Marilyn Manson","artisteNationality":"American"},
+{"artisteID":"19","artisteName":"Liam Howlett","artisteNationality":"British"},
+{"artisteID":"20","artisteName":"Keith Flint","artisteNationality":"British"},
+{"artisteID":"21","artisteName":"Maxim","artisteNationality":"British"},
+{"artisteID":"22","artisteName":"Till Lindemann","artisteNationality":"German"},
+{"artisteID":"23","artisteName":"Richard Z. Kruspe","artisteNationality":"German"},
+{"artisteID":"24","artisteName":"Paul Landers","artisteNationality":"German"},
+{"artisteID":"25","artisteName":"Christoph Schneider","artisteNationality":null},
+{"artisteID":"26","artisteName":"Rob Zombie","artisteNationality":null},
+{"artisteID":"27","artisteName":"Baauer","artisteNationality":null},
+{"artisteID":"28","artisteName":"Jim Croce","artisteNationality":null},
+{"artisteID":"29","artisteName":"David Julyan","artisteNationality":"American"},
+{"artisteID":"30","artisteName":"Joe Cuba","artisteNationality":null},
+{"artisteID":"31","artisteName":"Bo Diddley","artisteNationality":"American"},
+{"artisteID":"32","artisteName":"Howlin Wolf","artisteNationality":"American"}
+]
+}
+,{"type":"table","name":"artiste_band","database":"movie_db","data":
+[
+{"artiste_bandID":"1","bandRole":"lead vocals","a_artisteID":"7","b_bandID":"1"},
+{"artiste_bandID":"2","bandRole":"bass","a_artisteID":"8","b_bandID":"1"},
+{"artiste_bandID":"3","bandRole":"drums","a_artisteID":"9","b_bandID":"1"},
+{"artiste_bandID":"4","bandRole":"lead guitar","a_artisteID":"10","b_bandID":"1"},
+{"artiste_bandID":"5","bandRole":"bass","a_artisteID":"13","b_bandID":"2"},
+{"artiste_bandID":"6","bandRole":"saxophone","a_artisteID":"14","b_bandID":"2"},
+{"artiste_bandID":"7","bandRole":"drums","a_artisteID":"15","b_bandID":"2"},
+{"artiste_bandID":"8","bandRole":"lead vocals","a_artisteID":"16","b_bandID":"2"},
+{"artiste_bandID":"9","bandRole":"guitar","a_artisteID":"17","b_bandID":"2"},
+{"artiste_bandID":"10","bandRole":"Keyboards","a_artisteID":"19","b_bandID":"3"},
+{"artiste_bandID":"11","bandRole":"dancer","a_artisteID":"20","b_bandID":"3"},
+{"artiste_bandID":"12","bandRole":"MC","a_artisteID":"21","b_bandID":"3"},
+{"artiste_bandID":"14","bandRole":"lead vocals","a_artisteID":"22","b_bandID":"4"},
+{"artiste_bandID":"15","bandRole":"lead guitar","a_artisteID":"23","b_bandID":"4"},
+{"artiste_bandID":"16","bandRole":"bass","a_artisteID":"24","b_bandID":"4"},
+{"artiste_bandID":"17","bandRole":"drums","a_artisteID":"25","b_bandID":"4"}
+]
+}
+,{"type":"table","name":"band","database":"movie_db","data":
+[
+{"bandID":"1","bandName":"Dope"},
+{"bandID":"2","bandName":"Kool and the Gang"},
+{"bandID":"3","bandName":"The Prodigy"},
+{"bandID":"4","bandName":"Rammstein"}
+]
+}
+,{"type":"table","name":"genre","database":"movie_db","data":
+[
+{"genreID":"1","genreType":"Drama","genreDesc":"Drama film is a genre that relies on the emotional and relational development of realistic characters"},
+{"genreID":"2","genreType":"Crime","genreDesc":"Films that focus on crime"},
+{"genreID":"3","genreType":"Action","genreDesc":"Action film is a film genre in which the protagonist or protagonists end up in a series of challenges that typically include violence, extended fighting, physical feats, and frantic chases."},
+{"genreID":"4","genreType":"Comic Book","genreDesc":"Film adaptions from comic books and graphic novels"},
+{"genreID":"5","genreType":"Sci-Fi","genreDesc":"Films of speculative fiction, typically dealing with imaginative concepts such as futuristic science and tech"},
+{"genreID":"6","genreType":"Mystery","genreDesc":"Is a type of fiction in which a detective, or other professional, solves a crime or series of crimes"},
+{"genreID":"7","genreType":"Adventure","genreDesc":"An adventure is an event or series of events that happens outside the course of the protagonist's ordinary life, usually accompanied by danger, often by physical action."},
+{"genreID":"8","genreType":"Comedy","genreDesc":"Comedy is a genre of film in which the main emphasis is on humor. "}
+]
+}
+,{"type":"table","name":"movie","database":"movie_db","data":
+[
+{"movieID":"1","movieTitle":"The Shawshank Redemption","movieDesc":"Two imprisoned men bond over a number of years","movieReleaseDate":"1994-10-14","movieRuntime":"142","movieCertificate":"18","movieRating":"5"},
+{"movieID":"2","movieTitle":"The Godfather","movieDesc":"The aging patriarch of an organized crime dynasty transfers control to his son","movieReleaseDate":"1972-03-24","movieRuntime":"175","movieCertificate":"18","movieRating":"5"},
+{"movieID":"3","movieTitle":"The Dark Knight","movieDesc":"The menace known as the joker wreaks havoc on Gotham City","movieReleaseDate":"2008-07-18","movieRuntime":"152","movieCertificate":"12","movieRating":"5"},
+{"movieID":"4","movieTitle":"American Psycho","movieDesc":"A wealthy New York investment banking executive hides his alternate psychopathic ego","movieReleaseDate":"2000-04-14","movieRuntime":"102","movieCertificate":"18","movieRating":"4"},
+{"movieID":"5","movieTitle":"Pulp Fiction","movieDesc":"The lives of two mod hit men, a boxer, a gangster`s wife are all inter twinned","movieReleaseDate":"1994-10-14","movieRuntime":"154","movieCertificate":"18","movieRating":"4"},
+{"movieID":"6","movieTitle":"The Matrix","movieDesc":"A hacker learns from mysterious rebels about the true nature of his reality","movieReleaseDate":"1999-03-31","movieRuntime":"136","movieCertificate":"18","movieRating":"4"},
+{"movieID":"7","movieTitle":"Logan","movieDesc":"In a near future, a weary Logan cares for an ailing professor x","movieReleaseDate":"2017-03-03","movieRuntime":"135","movieCertificate":"18","movieRating":"5"},
+{"movieID":"8","movieTitle":"The Prestige","movieDesc":"Two stage magicians engage in competitive one-upmanship in an attempt to create the ultimate stage illusion","movieReleaseDate":"2006-10-20","movieRuntime":"135","movieCertificate":"12","movieRating":"5"},
+{"movieID":"9","movieTitle":"Interstellar","movieDesc":"A team of explorers travel through a wormhole in space in an attempt to save the human race","movieReleaseDate":"2014-11-07","movieRuntime":"169","movieCertificate":"12","movieRating":"5"},
+{"movieID":"10","movieTitle":"The Wolf of Wall Street","movieDesc":"Based on the true story of Jordan Belfort","movieReleaseDate":"2013-12-25","movieRuntime":"180","movieCertificate":"18","movieRating":"4"},
+{"movieID":"11","movieTitle":"test","movieDesc":"lalaland","movieReleaseDate":"2018-07-05","movieRuntime":"175","movieCertificate":"18","movieRating":"5"}
+]
+}
+,{"type":"table","name":"movie_genre","database":"movie_db","data":
+[
+{"movie_genreID":"1","m_movieID":"1","g_genreID":"1"},
+{"movie_genreID":"2","m_movieID":"2","g_genreID":"2"},
+{"movie_genreID":"3","m_movieID":"2","g_genreID":"1"},
+{"movie_genreID":"4","m_movieID":"3","g_genreID":"2"},
+{"movie_genreID":"5","m_movieID":"3","g_genreID":"3"},
+{"movie_genreID":"6","m_movieID":"3","g_genreID":"4"},
+{"movie_genreID":"7","m_movieID":"4","g_genreID":"2"},
+{"movie_genreID":"8","m_movieID":"4","g_genreID":"1"},
+{"movie_genreID":"9","m_movieID":"5","g_genreID":"1"},
+{"movie_genreID":"10","m_movieID":"5","g_genreID":"2"},
+{"movie_genreID":"11","m_movieID":"6","g_genreID":"3"},
+{"movie_genreID":"12","m_movieID":"6","g_genreID":"5"},
+{"movie_genreID":"13","m_movieID":"7","g_genreID":"4"},
+{"movie_genreID":"14","m_movieID":"7","g_genreID":"3"},
+{"movie_genreID":"15","m_movieID":"7","g_genreID":"5"},
+{"movie_genreID":"16","m_movieID":"8","g_genreID":"1"},
+{"movie_genreID":"17","m_movieID":"8","g_genreID":"6"},
+{"movie_genreID":"18","m_movieID":"9","g_genreID":"7"},
+{"movie_genreID":"19","m_movieID":"9","g_genreID":"1"},
+{"movie_genreID":"20","m_movieID":"9","g_genreID":"5"},
+{"movie_genreID":"21","m_movieID":"10","g_genreID":"8"},
+{"movie_genreID":"22","m_movieID":"10","g_genreID":"2"}
+]
+}
+,{"type":"table","name":"movie_studio","database":"movie_db","data":
+[
+{"movie_studioID":"1","m_movieID":"1","s_studioID":"1"},
+{"movie_studioID":"2","m_movieID":"2","s_studioID":"2"},
+{"movie_studioID":"3","m_movieID":"3","s_studioID":"3"},
+{"movie_studioID":"4","m_movieID":"4","s_studioID":"4"},
+{"movie_studioID":"5","m_movieID":"5","s_studioID":"5"},
+{"movie_studioID":"6","m_movieID":"6","s_studioID":"3"},
+{"movie_studioID":"7","m_movieID":"6","s_studioID":"6"},
+{"movie_studioID":"8","m_movieID":"7","s_studioID":"7"},
+{"movie_studioID":"9","m_movieID":"8","s_studioID":"3"},
+{"movie_studioID":"10","m_movieID":"9","s_studioID":"3"},
+{"movie_studioID":"11","m_movieID":"10","s_studioID":"2"}
+]
+}
+,{"type":"table","name":"person","database":"movie_db","data":
+[
+{"personID":"1","personFirstName":"Morgan","personLastName":"Freeman","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000151\/mediaviewer\/rm3587479040?ref_=nm_ov_ph"},
+{"personID":"2","personFirstName":"Tim","personLastName":"Robbins","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000209\/mediaviewer\/rm3789593344?ref_=nm_ov_ph"},
+{"personID":"3","personFirstName":"Frank","personLastName":"Darabont","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0001104\/mediaviewer\/rm3402598144?ref_=nm_ov_ph"},
+{"personID":"4","personFirstName":"Stephen","personLastName":"King","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000175\/mediaviewer\/rm2162726912?ref_=nm_ov_ph"},
+{"personID":"5","personFirstName":"Al","personLastName":"Pacino","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000199\/mediaviewer\/rm3894385408?ref_=nm_ov_ph"},
+{"personID":"6","personFirstName":"Marlon","personLastName":"Brando","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000008\/mediaviewer\/rm1238402304?ref_=nm_ov_ph"},
+{"personID":"7","personFirstName":"Francis Ford","personLastName":"Coppola","personNationality":"Italian","personPicture":"http:\/\/www.imdb.com\/name\/nm0000338\/mediaviewer\/rm604472576?ref_=nm_ov_ph"},
+{"personID":"8","personFirstName":"Christian","personLastName":"Bale","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000288\/mediaviewer\/rm3114052352?ref_=nm_ov_ph"},
+{"personID":"9","personFirstName":"Heath","personLastName":"Ledger","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0005132\/mediaviewer\/rm1308400384?ref_=nm_ov_ph"},
+{"personID":"10","personFirstName":"Christopher","personLastName":"Nolan","personNationality":null,"personPicture":"http:\/\/www.imdb.com\/name\/nm0634240\/mediaviewer\/rm2047771392?ref_=nm_ov_ph"},
+{"personID":"11","personFirstName":"Jonathan","personLastName":"Nolan","personNationality":null,"personPicture":"http:\/\/www.imdb.com\/name\/nm0634300\/mediaviewer\/rm3593121792?ref_=nm_ov_ph"},
+{"personID":"12","personFirstName":"Mary","personLastName":"Harron","personNationality":null,"personPicture":"http:\/\/www.imdb.com\/name\/nm0366004\/mediaviewer\/rm1540923392?ref_=nm_ov_ph"},
+{"personID":"13","personFirstName":"Justin","personLastName":"Theroux","personNationality":null,"personPicture":"http:\/\/www.imdb.com\/name\/nm0857620\/mediaviewer\/rm605539840?ref_=nm_ov_ph"},
+{"personID":"14","personFirstName":"John","personLastName":"Travolta","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000237\/mediaviewer\/rm3504714496?ref_=nm_ov_ph"},
+{"personID":"15","personFirstName":"Tim","personLastName":"Roth","personNationality":"American","personPicture":null},
+{"personID":"16","personFirstName":"Quentin","personLastName":"Tarantino","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000233\/mediaviewer\/rm4146963200?ref_=nm_ov_ph"},
+{"personID":"17","personFirstName":"Keanu","personLastName":"Reeves","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000206\/mediaviewer\/rm3751520256?ref_=nm_ov_ph"},
+{"personID":"18","personFirstName":"Laurence","personLastName":"Fishburne","personNationality":null,"personPicture":"http:\/\/www.imdb.com\/name\/nm0000401\/mediaviewer\/rm1925683200?ref_=nm_ov_ph"},
+{"personID":"19","personFirstName":"Lana","personLastName":"Wachowski","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0905154\/mediaviewer\/rm3382618368?ref_=nm_ov_ph"},
+{"personID":"20","personFirstName":"Lilly","personLastName":"Wachowski","personNationality":null,"personPicture":"http:\/\/www.imdb.com\/name\/nm0905152\/mediaviewer\/rm1928797184?ref_=nm_ov_ph"},
+{"personID":"21","personFirstName":"Hugh","personLastName":"Jackman","personNationality":"Australian","personPicture":"http:\/\/www.imdb.com\/name\/nm0413168\/mediaviewer\/rm772779264?ref_=nm_ov_ph"},
+{"personID":"22","personFirstName":"Paddy","personLastName":"Stewart","personNationality":"American","personPicture":null},
+{"personID":"23","personFirstName":"Matthew","personLastName":"McConaughey","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000190\/mediaviewer\/rm477213952?ref_=nm_ov_ph"},
+{"personID":"24","personFirstName":"Ellen","personLastName":null,"personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000995\/mediaviewer\/rm577411584?ref_=nm_ov_ph"},
+{"personID":"25","personFirstName":"Leonardo","personLastName":"DiCaprio","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000138\/mediaviewer\/rm487490304?ref_=nm_ov_ph"},
+{"personID":"26","personFirstName":"Jonah","personLastName":"Hill","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm1706767\/mediaviewer\/rm4139364608?ref_=nm_ov_ph"},
+{"personID":"27","personFirstName":"Martin","personLastName":"Scorsese","personNationality":"American","personPicture":"http:\/\/www.imdb.com\/name\/nm0000217\/mediaviewer\/rm1221431040?ref_=nm_ov_ph"}
+]
+}
+,{"type":"table","name":"poster","database":"movie_db","data":
+[
+{"posterID":"1","posterLink":null,"p_movieID":"1"},
+{"posterID":"2","posterLink":null,"p_movieID":"2"},
+{"posterID":"3","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg","p_movieID":"3"},
+{"posterID":"4","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMjIyMTYwMTI0N15BMl5BanBnXkFtZTgwNTU2NTYxMTE@._V1_SX300.jpg","p_movieID":"4"},
+{"posterID":"5","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SX300.jpg","p_movieID":"5"},
+{"posterID":"6","posterLink":null,"p_movieID":"6"},
+{"posterID":"7","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMjI1MjkzMjczMV5BMl5BanBnXkFtZTgwNDk4NjYyMTI@._V1_SX300.jpg","p_movieID":"7"},
+{"posterID":"8","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_SX300.jpg","p_movieID":"8"},
+{"posterID":"9","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg","p_movieID":"9"},
+{"posterID":"10","posterLink":"https:\/\/images-na.ssl-images-amazon.com\/images\/M\/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg","p_movieID":"10"}
+]
+}
+,{"type":"table","name":"role","database":"movie_db","data":
+[
+{"roleID":"1","roleDesc":"co-actor","m_movieID":"1","p_personID":"1"},
+{"roleID":"2","roleDesc":"lead actor","m_movieID":"1","p_personID":"2"},
+{"roleID":"3","roleDesc":"director","m_movieID":"1","p_personID":"3"},
+{"roleID":"4","roleDesc":"writer","m_movieID":"1","p_personID":"4"},
+{"roleID":"5","roleDesc":"lead actor","m_movieID":"2","p_personID":"6"},
+{"roleID":"6","roleDesc":"co-actor","m_movieID":"2","p_personID":"5"},
+{"roleID":"7","roleDesc":"director","m_movieID":"2","p_personID":"7"},
+{"roleID":"8","roleDesc":"director","m_movieID":"3","p_personID":"10"},
+{"roleID":"9","roleDesc":"writer","m_movieID":"3","p_personID":"11"},
+{"roleID":"10","roleDesc":"screenplay","m_movieID":"3","p_personID":"10"},
+{"roleID":"11","roleDesc":"lead actor","m_movieID":"3","p_personID":"8"},
+{"roleID":"12","roleDesc":"co-actor","m_movieID":"3","p_personID":"9"},
+{"roleID":"13","roleDesc":"lead actor","m_movieID":"4","p_personID":"8"},
+{"roleID":"14","roleDesc":"director","m_movieID":"4","p_personID":"12"},
+{"roleID":"15","roleDesc":"co-actor","m_movieID":"4","p_personID":"13"},
+{"roleID":"16","roleDesc":"co-actor","m_movieID":"5","p_personID":"14"},
+{"roleID":"17","roleDesc":"co-actor","m_movieID":"5","p_personID":"15"},
+{"roleID":"18","roleDesc":"co-actor","m_movieID":"5","p_personID":"16"},
+{"roleID":"19","roleDesc":"director","m_movieID":"5","p_personID":"16"},
+{"roleID":"20","roleDesc":"writer","m_movieID":"5","p_personID":"16"},
+{"roleID":"21","roleDesc":"lead actor","m_movieID":"6","p_personID":"17"},
+{"roleID":"22","roleDesc":"co-actor","m_movieID":"6","p_personID":"18"},
+{"roleID":"23","roleDesc":"director","m_movieID":"6","p_personID":"19"},
+{"roleID":"24","roleDesc":"director","m_movieID":"6","p_personID":"20"},
+{"roleID":"25","roleDesc":"writer","m_movieID":"6","p_personID":"19"},
+{"roleID":"26","roleDesc":"writer","m_movieID":"6","p_personID":"20"},
+{"roleID":"27","roleDesc":"lead actor","m_movieID":"7","p_personID":"21"},
+{"roleID":"28","roleDesc":"co-actor","m_movieID":"7","p_personID":"22"},
+{"roleID":"29","roleDesc":"lead actor","m_movieID":"8","p_personID":"21"},
+{"roleID":"30","roleDesc":"co-actor","m_movieID":"8","p_personID":"8"},
+{"roleID":"31","roleDesc":"director","m_movieID":"8","p_personID":"10"},
+{"roleID":"32","roleDesc":"lead actor","m_movieID":"9","p_personID":"23"},
+{"roleID":"33","roleDesc":"co-actor","m_movieID":"9","p_personID":"24"},
+{"roleID":"34","roleDesc":"director","m_movieID":"9","p_personID":"10"},
+{"roleID":"35","roleDesc":"lead actor","m_movieID":"10","p_personID":"25"},
+{"roleID":"36","roleDesc":"co-actor","m_movieID":"10","p_personID":"26"},
+{"roleID":"37","roleDesc":"director","m_movieID":"10","p_personID":"17"}
+]
+}
+,{"type":"table","name":"song","database":"movie_db","data":
+[
+{"songID":"1","songName":"May","songLength":"1","songURL":"www.youtube.com\/may"},
+{"songID":"2","songName":"Shawshank Prison","songLength":"2","songURL":"www.youtube.com\/shawshankprison"},
+{"songID":"3","songName":"New Fish","songLength":"3","songURL":"www.youtube.com\/newfish"},
+{"songID":"4","songName":"Rock Hammer","songLength":"3","songURL":"www.youtube,com\/rockhammer"},
+{"songID":"5","songName":"An Inch of his life","songLength":"2","songURL":"www.youtube.com\/aninchofhislife"},
+{"songID":"6","songName":"The Godfather Waltz","songLength":"4","songURL":"www.youtube.com\/thewaltz"},
+{"songID":"7","songName":"I have but one heart","songLength":"3","songURL":"www.youtube.com\/ihavebutoneheart"},
+{"songID":"8","songName":"The Pickup","songLength":"2","songURL":"www.youtube.com\/thepickup"},
+{"songID":"9","songName":"Connies Wedding","songLength":"3","songURL":"www.youtube.com\/connieswedding"},
+{"songID":"10","songName":"Miller Compilation","songLength":"20","songURL":"www.youtube.com\/millercompilation"},
+{"songID":"11","songName":"Hip to be Square","songLength":"3","songURL":"www.youtube.com\/hiptobesquare"},
+{"songID":"12","songName":"You Spin me Round","songLength":"2","songURL":"www.youtube.com\/youspinmeround"},
+{"songID":"13","songName":"Jungle Boogie","songLength":"3","songURL":"www.youtube.com\/jungleboogie"},
+{"songID":"14","songName":"Son of a Preacher Man","songLength":"4","songURL":"www.youtube.com\/sonofapreacherman"},
+{"songID":"15","songName":"Girl, Youll be a Woman Soon","songLength":"3","songURL":"www.youtube.com\/youllbeawomansoon"},
+{"songID":"16","songName":"Rock is Dead","songLength":"3","songURL":"www.youtube.com\/rockisdead"},
+{"songID":"17","songName":"Mindfields","songLength":"5","songURL":"www.youtube.com\/mindfields"},
+{"songID":"18","songName":"Du Hast","songLength":"4","songURL":"www.youtube.com\/duhast"},
+{"songID":"19","songName":"Dragula","songLength":"4","songURL":"www.youtube.com\/dragula"},
+{"songID":"20","songName":"Make it Bang","songLength":"4","songURL":"www.youtube.com\/makeitbang"},
+{"songID":"21","songName":"I got a name","songLength":"3","songURL":"www.youtube.com\/igotaname"},
+{"songID":"22","songName":"Are you watching closely","songLength":"3","songURL":"www.youtube.com\/areyouwatching"},
+{"songID":"23","songName":"The light field","songLength":"2","songURL":"www.youtube.com\/thelightfield"},
+{"songID":"24","songName":"Border Meets Sarah","songLength":"4","songURL":"www.youtube.com\/bordermeetssarah"},
+{"songID":"25","songName":"No, not today","songLength":"5","songURL":"www.youtube.com\/nonottoday"},
+{"songID":"26","songName":"Interstellar compilation","songLength":"72","songURL":"https:\/\/www.youtube.com\/watch?v=iBfk37Fa3H0"},
+{"songID":"27","songName":"Bang Bang","songLength":"4","songURL":"www.youtube.com\/bangbang"},
+{"songID":"28","songName":"Pretty Thing","songLength":"3","songURL":"www.youtube.com\/prettything"},
+{"songID":"29","songName":"Smokestack Lightning","songLength":"4","songURL":"www.youtube.com\/smokestack"}
+]
+}
+,{"type":"table","name":"song_artiste","database":"movie_db","data":
+[
+{"song_artisteID":"1","s_songID":"1","a_artisteID":"1"},
+{"song_artisteID":"2","s_songID":"2","a_artisteID":"1"},
+{"song_artisteID":"3","s_songID":"3","a_artisteID":"1"},
+{"song_artisteID":"4","s_songID":"4","a_artisteID":"1"},
+{"song_artisteID":"5","s_songID":"5","a_artisteID":"1"},
+{"song_artisteID":"6","s_songID":"6","a_artisteID":"2"},
+{"song_artisteID":"7","s_songID":"7","a_artisteID":"3"},
+{"song_artisteID":"8","s_songID":"8","a_artisteID":"2"},
+{"song_artisteID":"9","s_songID":"9","a_artisteID":"4"},
+{"song_artisteID":"10","s_songID":"10","a_artisteID":"5"},
+{"song_artisteID":"11","s_songID":"11","a_artisteID":"6"},
+{"song_artisteID":"12","s_songID":"14","a_artisteID":"11"},
+{"song_artisteID":"13","s_songID":"15","a_artisteID":"12"},
+{"song_artisteID":"14","s_songID":"16","a_artisteID":"18"},
+{"song_artisteID":"15","s_songID":"19","a_artisteID":"26"},
+{"song_artisteID":"16","s_songID":"20","a_artisteID":"27"},
+{"song_artisteID":"17","s_songID":"21","a_artisteID":"28"},
+{"song_artisteID":"18","s_songID":"22","a_artisteID":"29"},
+{"song_artisteID":"19","s_songID":"23","a_artisteID":"29"},
+{"song_artisteID":"20","s_songID":"24","a_artisteID":"29"},
+{"song_artisteID":"21","s_songID":"25","a_artisteID":"29"},
+{"song_artisteID":"22","s_songID":"26","a_artisteID":"5"},
+{"song_artisteID":"23","s_songID":"27","a_artisteID":"30"},
+{"song_artisteID":"24","s_songID":"28","a_artisteID":"31"},
+{"song_artisteID":"25","s_songID":"29","a_artisteID":"32"}
+]
+}
+,{"type":"table","name":"song_band","database":"movie_db","data":
+[
+{"song_bandID":"1","song_songID":"12","b_bandID":"1"},
+{"song_bandID":"2","song_songID":"13","b_bandID":"2"},
+{"song_bandID":"3","song_songID":"17","b_bandID":"3"},
+{"song_bandID":"4","song_songID":"18","b_bandID":"4"}
+]
+}
+,{"type":"table","name":"soundtrack","database":"movie_db","data":
+[
+{"soundtrackID":"1","soundtrackName":"The Shawshank Redemption Soundtrack","soundtrackSize":"5","m_movieID":"1"},
+{"soundtrackID":"2","soundtrackName":"The Godfather Soundtrack","soundtrackSize":"6","m_movieID":"2"},
+{"soundtrackID":"3","soundtrackName":"The Dark Knight","soundtrackSize":"5","m_movieID":"3"},
+{"soundtrackID":"4","soundtrackName":"American Psycho: Music from the Controversial movie picture","soundtrackSize":"10","m_movieID":"4"},
+{"soundtrackID":"5","soundtrackName":"Music from the Motion Picture Pulp Fiction","soundtrackSize":"16","m_movieID":"5"},
+{"soundtrackID":"6","soundtrackName":"The Matrix, Music, Music from the Motion Picture","soundtrackSize":"13","m_movieID":"6"},
+{"soundtrackID":"7","soundtrackName":"Logan Music","soundtrackSize":"16","m_movieID":"7"},
+{"soundtrackID":"8","soundtrackName":"The Prestige: Original Score","soundtrackSize":"17","m_movieID":"8"},
+{"soundtrackID":"9","soundtrackName":"Interstellar Soundtrack","soundtrackSize":"16","m_movieID":"9"},
+{"soundtrackID":"10","soundtrackName":"The Wolf Of Wall Street","soundtrackSize":"16","m_movieID":"10"}
+]
+}
+,{"type":"table","name":"soundtrack_song","database":"movie_db","data":
+[
+{"soundtrack_songID":"1","soundtrack_soundtrackID":"1","song_songID":"1"},
+{"soundtrack_songID":"2","soundtrack_soundtrackID":"1","song_songID":"2"},
+{"soundtrack_songID":"3","soundtrack_soundtrackID":"1","song_songID":"3"},
+{"soundtrack_songID":"4","soundtrack_soundtrackID":"1","song_songID":"4"},
+{"soundtrack_songID":"5","soundtrack_soundtrackID":"1","song_songID":"5"},
+{"soundtrack_songID":"6","soundtrack_soundtrackID":"2","song_songID":"6"},
+{"soundtrack_songID":"7","soundtrack_soundtrackID":"2","song_songID":"7"},
+{"soundtrack_songID":"8","soundtrack_soundtrackID":"2","song_songID":"8"},
+{"soundtrack_songID":"9","soundtrack_soundtrackID":"2","song_songID":"9"},
+{"soundtrack_songID":"10","soundtrack_soundtrackID":"3","song_songID":"10"},
+{"soundtrack_songID":"11","soundtrack_soundtrackID":"4","song_songID":"11"},
+{"soundtrack_songID":"12","soundtrack_soundtrackID":"4","song_songID":"12"},
+{"soundtrack_songID":"13","soundtrack_soundtrackID":"5","song_songID":"13"},
+{"soundtrack_songID":"14","soundtrack_soundtrackID":"5","song_songID":"14"},
+{"soundtrack_songID":"15","soundtrack_soundtrackID":"5","song_songID":"15"},
+{"soundtrack_songID":"16","soundtrack_soundtrackID":"6","song_songID":"16"},
+{"soundtrack_songID":"17","soundtrack_soundtrackID":"6","song_songID":"17"},
+{"soundtrack_songID":"18","soundtrack_soundtrackID":"6","song_songID":"18"},
+{"soundtrack_songID":"19","soundtrack_soundtrackID":"6","song_songID":"19"},
+{"soundtrack_songID":"20","soundtrack_soundtrackID":"7","song_songID":"20"},
+{"soundtrack_songID":"21","soundtrack_soundtrackID":"7","song_songID":"21"},
+{"soundtrack_songID":"22","soundtrack_soundtrackID":"8","song_songID":"22"},
+{"soundtrack_songID":"23","soundtrack_soundtrackID":"8","song_songID":"23"},
+{"soundtrack_songID":"24","soundtrack_soundtrackID":"8","song_songID":"24"},
+{"soundtrack_songID":"25","soundtrack_soundtrackID":"8","song_songID":"25"},
+{"soundtrack_songID":"26","soundtrack_soundtrackID":"9","song_songID":"26"},
+{"soundtrack_songID":"27","soundtrack_soundtrackID":"10","song_songID":"27"},
+{"soundtrack_songID":"28","soundtrack_soundtrackID":"10","song_songID":"28"},
+{"soundtrack_songID":"29","soundtrack_soundtrackID":"10","song_songID":"29"}
+]
+}
+,{"type":"table","name":"studio","database":"movie_db","data":
+[
+{"studioID":"1","studioName":"Castle Rock Studios","studioAddress":"America"},
+{"studioID":"2","studioName":"Paramount Pictures","studioAddress":"America"},
+{"studioID":"3","studioName":"Warner Bros","studioAddress":"America"},
+{"studioID":"4","studioName":"Lionsgate Studios","studioAddress":"America"},
+{"studioID":"5","studioName":"Miramax Films","studioAddress":"America"},
+{"studioID":"6","studioName":"Road Show Entertainment","studioAddress":"Australia"},
+{"studioID":"7","studioName":"Marvel Studios","studioAddress":"America"}
+]
+}
+,{"type":"table","name":"trailer","database":"movie_db","data":
+[
+{"trailerID":"1","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=6hB3S9bIaco","t_movieID":"1"},
+{"trailerID":"2","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=sY1S34973zA","t_movieID":"2"},
+{"trailerID":"3","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=EXeTwQWrcwY","t_movieID":"3"},
+{"trailerID":"4","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=2GIsExb5jJU","t_movieID":"4"},
+{"trailerID":"5","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=s7EdQ4FqbhY","t_movieID":"5"},
+{"trailerID":"6","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=m8e-FF8MsqU","t_movieID":"6"},
+{"trailerID":"7","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=DekuSxJgpbY","t_movieID":"7"},
+{"trailerID":"8","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=o4gHCmTQDVI","t_movieID":"8"},
+{"trailerID":"9","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=zSWdZVtXT7E","t_movieID":"9"},
+{"trailerID":"10","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=iszwuX1AK6A","t_movieID":"10"},
+{"trailerID":"11","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=vKQi3bBA1y8","t_movieID":"6"},
+{"trailerID":"12","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=pabEtIERlic","t_movieID":"10"},
+{"trailerID":"13","trailerLength":"3","trailerURL":"https:\/\/www.youtube.com\/watch?v=5DO-nDW43Ik","t_movieID":"2"},
+{"trailerID":"14","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=ewlwcEBTvcg","t_movieID":"5"},
+{"trailerID":"15","trailerLength":"2","trailerURL":"https:\/\/www.youtube.com\/watch?v=Div0iP65aZo&t=15s","t_movieID":"7"},
+{"trailerID":"16","trailerLength":"4","trailerURL":"https:\/\/www.youtube.com\/watch?v=RH3OxVFvTeg","t_movieID":"7"}
+]
+}
+]
