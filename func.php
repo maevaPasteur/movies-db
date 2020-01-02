@@ -87,7 +87,7 @@ function template_table($title, $items, $table, $param1Title, $param1Content, $p
                     $id = $table.'ID';
                     $html.= "
                         <tr>
-                            <td>$item[$id]</td>
+                            <td><a href=\"read.php?id=$item[$id]&table=$table\">#$item[$id]</a></td>
                             ";
                     if($table === 'poster') {
                         $html.= "<td><img src=\"$item[$param1Content]\" alt='poster'></td>";
@@ -95,14 +95,14 @@ function template_table($title, $items, $table, $param1Title, $param1Content, $p
                         $html.= "<td>$item[$param1Content]</td>";
                     }
                     if($param2Content) {
-                        if($table === 'song') {
+                        if($table === 'song' or $table === 'trailer') {
                             $html.= "<td><a href=\"$item[$param2Content]\">$item[$param2Content]</a></td>";
                         } else {
                             $html.="<td>$item[$param2Content]</td>";
                         }
                     }
                     $html.= "
-                            <td>
+                            <td class='actions'>
                                 <a href=\"update.php?id=$item[$id]&table=$table\"><img class='icon' src='assets/images/edit.svg' alt='edit'></a>
                                 <a href=\"delete.php?id=$item[$id]&table=$table\"><img class='icon' src='assets/images/delete.svg' alt='delete'></a>
                             </td>
