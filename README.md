@@ -13,9 +13,13 @@ Ce devoir a été enrichie après cette deadline sur une branche à part pour fa
  - Voir
  - Modifier
  - Supprimer
+ 
+ ## La base de données
+La base de données est exportée dans la dossier ***bdd*** dans la branch ***bonus***
 
 
 ## Réalisé par
 Maëva Pasteur
 Master 1 Dev | ECV Digital
 maeva.pasteur.pro@gmail.com
+
